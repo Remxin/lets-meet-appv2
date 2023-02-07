@@ -1,7 +1,17 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import { useEffect } from 'react'
+import { useNavigation } from '@react-navigation/native'
 
-const LoadingScreen = () => {
+// @ts-ignore
+const LoadingScreen = ({ navigation }) => {
+    // const navigation = useNavigation()
+
+    useEffect(() => {
+      setTimeout(() => {
+          navigation.navigate("Auth")
+        }, 300)
+    }, [])
+
   return (
     <View>
       <Text>LoadingScreen</Text>

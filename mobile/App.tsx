@@ -29,6 +29,7 @@ import { createStackNavigator } from "@react-navigation/stack"
 import { NavigationContainer } from '@react-navigation/native';
 
 import HomeNavigator from './screens/home/HomeNavigator';
+import AuthNavigator from './screens/auth/AuthNavigator';
 const RootTab = createStackNavigator()
 
 
@@ -41,7 +42,9 @@ function App(): JSX.Element {
       <NavigationContainer>
         <RootTab.Navigator>
           <RootTab.Screen name="Loading" component={LoadingScreen}/>
-          <RootTab.Screen name='Home' component={HomeNavigator}/>
+          <RootTab.Screen name="Home" component={HomeNavigator} options={{ headerShown: false }}/>
+          <RootTab.Screen name="Auth" component={AuthNavigator} options={{ headerShown: false }}/>
+          
         </RootTab.Navigator>
       </NavigationContainer>
     </ReduxProvider>
